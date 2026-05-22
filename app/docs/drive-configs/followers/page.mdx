@@ -1,0 +1,24 @@
+# Follower Configs
+___
+
+## P2P Follower
+The P2P follower takes multiple arguments in the constants file:
+* heading, drive, strafe, pdls
+* heading tolerance
+* translational tolerance
+```java
+    public FollowerConstants setFollowerConstants() { // Any FollowerConstants
+        return new P2PFollowerConstants()
+                //heading, drive, strafe, pdls     
+                .setAxialCoeffs(new PDFLCoefficients(0.0, 0.0, 0.0))
+                .setStrafeCoeffs(new PDFLCoefficients(0.0, 0.0, 0.0))
+                .setHeadingCoeffs(new PDFLCoefficients(0.0, 0.0, 0.0))
+                //heading tolerance
+                .setHeadingTolerance(Angle.fromDeg(2.0))
+                //translational tolerance
+                .setTranslationalTolerance(Distance.fromIn(1.5))
+                //max power thresholds
+                .setMaxTranslationalPower(1)
+                .setMaxTurnPower(1);
+    }
+```
