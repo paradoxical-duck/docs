@@ -1,89 +1,17 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+export default {
+    "about": "About Us",
 
-@custom-variant dark (&:is(.dark *));
+    "setup-section": {
+        type: "separator",
+        title: "Installation & Tuning"
+    },
+    "installation": "Installation",
+    "constants": "Constants",
+    "tuning": "Tuning Guides" ,
 
-@theme {
-  --color-accent-text: #99a1af;
-  --color-divider: #1a0000;
-  --color-background: #fafafa;
-  --color-foreground: #000000;
-  --primary: #cc0000;
-  --color-brand-primary: #cc0000;
-  --color-brand-primary-hover: #ff1a1a;
-  --color-brand-accent: #1a0000;
-  --color-brand-accent-hover: #2d0000;
-  --color-brand-glow: #780000;
-  --color-brand-crimson: #8B0000;
-  --color-brand-scarlet: #ff3333;
+    "concepts-section": {
+        type: "separator",
+        title: "Core Concepts"
+    },
+    "controllers": "Controllers",
 }
-
-.dark {
-  --color-accent-text: #c9a8a8;
-  --color-divider: #1a0000;
-  --color-background: #0a0000;
-  --color-foreground: #fff5f5;
-  --color-brand-primary: #cc0000;
-  --color-brand-primary-hover: #ff1a1a;
-  --color-brand-accent: #1a0000;
-  --color-brand-accent-hover: #2d0000;
-  --color-brand-glow: #780000;
-  --color-brand-crimson: #8B0000;
-  --color-brand-scarlet: #ff3333;
-}
-
-body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background: var(--color-brand-primary);
-  color: #fff5f5;
-}
-
-main {
-  animation: pageSlideIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
-}
-@keyframes pageSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.995);
-    filter: blur(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-aside nav {
-  animation: sidebarIn 0.5s ease 0.15s both;
-}
-@keyframes sidebarIn {
-  from { opacity: 0; transform: translateX(-10px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-input[type="search"], [class*="search"] input {
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-input[type="search"]:focus, [class*="search"] input:focus {
-  border-color: var(--color-brand-primary) !important;
-  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.25) !important;
-  outline: none;
-}
-
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: var(--color-brand-primary);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover { background: var(--color-brand-primary-hover); }
