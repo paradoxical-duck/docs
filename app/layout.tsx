@@ -40,10 +40,6 @@ function PageNavbar() {
 
 function PageFooter() {
   return (
-<<<<<<< HEAD
-=======
-    
->>>>>>> d07a5fd (Swerve Offsets class)
     <footer key="footer" className='mt-auto border-t py-5 border-divider text-center text-sm text-accent-text'>
       &copy; 2026 Apex Pathing. Apex Pathing is licensed under the&nbsp;
       <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" className="hover:underline hover:text-brand-primary-hover">GNU General Public License v3.0</a>
