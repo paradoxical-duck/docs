@@ -7,6 +7,8 @@ import { ArrowDown, Mail } from "lucide-react";
 import { GithubSVG, DiscordSVG, YoutubeSVG } from "@/components/media-icons";
 import { useEffect, useState } from "react";
 import HomePageCode from "./home-page-code.mdx";
+import SnowEffect from "@/components/snow-effect";
+
 
 interface TutorialProps {
   name: string;
@@ -110,6 +112,7 @@ const socialLinks: SocialProps[] = [
 
 export default function Home() {
   const [isScrollIndicatorVisible, setScrollIndicator] = useState(true);
+        
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,6 +125,7 @@ export default function Home() {
 
   return (
     <div className="relative flex flex-col w-full items-center">
+              <SnowEffect /> 
       <div className="relative flex flex-col w-full items-center min-h-[calc(100vh-var(--nextra-navbar-height,4rem))] pb-4 justify-center">
 
         <div className="max-w-3xl z-10 relative px-6 text-center">
