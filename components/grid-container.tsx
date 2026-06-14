@@ -5,7 +5,7 @@ interface CardProps {
   description: string;
   href: string;
   icon: React.ReactNode;
-  theme: 'yellow' | 'green' | 'purple' | 'blue' | 'red"';
+  theme: 'yellow' | 'green' | 'purple' | 'blue' | 'red';
 }
 
 const themeClasses = {
