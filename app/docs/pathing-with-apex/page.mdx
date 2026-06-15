@@ -3,7 +3,7 @@
 This section covers how to build robust autonomous routines with extremely clean architectural structure with Apex Pathing.
 Apex is extremely easy to integrate into FSMs, command libraries and action systems, enabling you to choose your route to Path your way to the Peaks!
 
-## FSM Integration
+### FSM Integration
 There are multiple structurally clean and efficient implementations of Apex in FSMs. The majority of these utilize the hasStarted() and hasEnded()
 helper methods in `FollowerMovement`:
 
@@ -65,6 +65,31 @@ Alternatively, you may use something along these lines, eliminating the need for
             }
 ```
 
-## Command System Integration
+### Command System Integration
 
-Integrating Apex into a Command System is easy;
+Integrating Apex into a Command System like `ftclib` is easy; just use this `pathCommand` helper method:
+
+```java
+    private Command pathCommand(FollowerMovement path) {
+        return new SequentialCommandGroup(
+            new InstantCommand(() -> {
+                if (!path.hasStarted()) {
+                    follower.follow(path);
+                }
+            }),
+            new WaitUntilCommand(() -> path.hasEnded()),
+            new InstantCommand(() -> follower.stop())
+        );
+    }
+```
+
+Then, call it like so:
+
+```java
+    SequentialCommandGroup autoPath = new SequentialCommandGroup(
+      pathCommand(path.path1).alongWith(intake()),
+      pathCommand(path.path2).andThen(shoot())
+      //The rest of your paths here
+    );
+```
+
