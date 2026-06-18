@@ -16,5 +16,5 @@ export default {
         title: "Core Concepts"
     },
     "misc": "Controllers",
-    "bspline-theory": "B Spline Theory"
+  "bspline-theory": "B Spline Theory",
 }
